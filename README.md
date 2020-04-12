@@ -1,4 +1,5 @@
 # This project uses Flask to create APIS to get information about paranuara planet.
+### This needs python 3.6 or higher to run. If python3 is available as any alias other than python, please use that alias in virtualenv creation command.
 #### For this to work, it is important that json files are placed at resources directory of the project.
 ### Setup
 
@@ -14,7 +15,7 @@ RUN following commands in cmd line:
 $ cd <BASE_PROJECT_DIR>
 $ SET PYTHONPATH=<BASE_PROJECT_DIR>
 $ SET DB_URL=mysql://<username>:<password>@<host>:<port>/<db_name>
-$ python -m venv venv
+$ <python_alias> -m venv venv
 $ venv\Scripts\activate
 $ pip install -r requirements.txt
 $ pytest tests\
@@ -29,7 +30,7 @@ RUN following commands in terminal:
 $ cd <BASE_PROJECT_DIR>
 $ export PYTHONPATH=<BASE_PROJECT_DIR>
 $ export DB_URL=mysql://<username>:<password>@<host>:<port>/<db_name>
-$ python -m venv venv
+$ <python_alias> -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 $ $ pytest tests/
@@ -42,7 +43,7 @@ These steps essentially perform the following steps:
 - navigate to project root directory
 - set PYTHONPATH env variable
 - set DB_URL env variable, which will be used by the main app, as well as db migrations script
-- create virtual environment, activate venv and install dependencies
+- create virtual environment using python alias. e.g. if python3 is the alias, then use this command: python3 -m venv venv. Activate venv and install dependencies
 - Run unit tests
 - Run db migrations to create tables in database (This project yoyo-migratons. Checkout https://pypi.org/project/yoyo-migrations/4.2.0/ for more details). This also sets up the required data from json files into database.
 ##### For this to work, it is important that json files are placed at resources directory of the project.
