@@ -1,5 +1,5 @@
 # This project uses Flask to create APIS to get information about paranuara planet.
-
+#### For this to work, it is important that json files are placed at resources directory of the project.
 ### Setup
 
 
