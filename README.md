@@ -13,7 +13,7 @@ RUN following commands in cmd line:
 ```bat
 $ cd <BASE_PROJECT_DIR>
 $ SET PYTHONPATH=<BASE_PROJECT_DIR>
-$ SET DB_URL=mysql://<username>:<password>>@<host>:<port>/<db_name>
+$ SET DB_URL=mysql://<username>:<password>@<host>:<port>/<db_name>
 $ python -m venv venv
 $ venv\Scripts\activate
 $ pip install -r requirements.txt
@@ -28,7 +28,7 @@ RUN following commands in terminal:
 ```bash
 $ cd <BASE_PROJECT_DIR>
 $ export PYTHONPATH=<BASE_PROJECT_DIR>
-$ export DB_URL=mysql://<username>:<password>>@<host>:<port>/<db_name>
+$ export DB_URL=mysql://<username>:<password>@<host>:<port>/<db_name>
 $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
