@@ -1,0 +1,170 @@
+openapi: "3.0.0"
+info:
+  title: PARANUARA PLANET
+  description: Deatils for people on paranuara planet
+  version: 1.0.0
+  contact: sapangupta89@gmail.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+paths:
+  /employees:
+    get:
+      summary: List of employees for a company.
+      parameters:
+        - in: query
+          name: company
+          type: string
+          required: true
+          description: name of the company to fetch employees
+      responses:
+        200:
+          description: A CompanyEmployees object
+          schema:
+            type: object
+            properties:
+              $ref: '#/components/schemas/CompanyEmployees'
+        400:
+          description: Bad request. Company name should contain only alphanumeric or whitespace chars and less than 255 chars
+        5XX:
+          description: Unexpected error
+  /persons:
+    get:
+      summary: Given names of 2 persons, get their details and a list of mutual friends who are alive and have brown eyes
+      parameters:
+        - in: query
+          name: name1
+          type: string
+          required: true
+          description: name of the first person
+        - in: query
+          name: name2
+          type: string
+          required: true
+          description: name of the seconds person
+      responses:
+        200:
+          description: A MultiPersonResponse object
+          schema:
+            type: object
+            properties:
+              $ref: '#/components/schemas/MultiPersonResponse'
+        400:
+          description: Bad request. Person names should contain only alphanumeric or whitespace chars and less than 255 chars
+        5XX:
+          description: Unexpected error
+  /person:
+    get:
+      summary: Given a person name, get their details, and classify favourite food into fruits and vegetables
+      parameters:
+        - in: query
+          name: name
+          type: string
+          required: true
+          description: name of the person
+      responses:
+        200:
+          description: A SinglePersonResponse object
+          schema:
+            type: object
+            properties:
+              $ref: '#/components/schemas/SinglePersonResponse'
+        400:
+          description: Bad request. Person name should contain only alphanumeric or whitespace chars and less than 255 chars
+        5XX:
+          description: Unexpected error
+
+components:
+  schemas:
+    CompanyEmployees:
+      type: object
+      properties:
+        company_name:
+          type: string
+        employee_count:
+          type: integer
+        employees:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employee'
+    Employee:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        address:
+          type: string
+        phone:
+          type: string
+        age:
+          type: integer
+        gender:
+          type: string
+        has_died:
+          type: boolean
+        about:
+          type: string
+        registered:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    MultiPersonResponse:
+      type: object
+      properties:
+        first_person:
+          $ref: '#/components/schemas/MultiPersonDetails'
+        second_person:
+          $ref: '#/components/schemas/MultiPersonDetails'
+        mutual_friends:
+          type: array
+          items:
+            $ref: '#/components/schemas/FriendDetails'
+    MultiPersonDetails:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
+        address:
+          type: string
+        phone:
+          type: string
+    FriendDetails:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
+        gender:
+          type: string
+        eye_color:
+          type: string
+        has_died:
+          type: boolean
+        email:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+    SinglePersonResponse:
+      type: object
+      properties:
+        username:
+          type: string
+        age:
+          type: integer
+        fruits:
+          type: array
+          items:
+            type: string
+        vegetables:
+          type: array
+          items:
+            type: string

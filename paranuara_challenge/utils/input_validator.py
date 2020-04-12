@@ -1,5 +1,5 @@
 import re
-from paranuara_challenge.exceptions.InputException import InvalidInputException
+from paranuara_challenge.exceptions.input_exception import InvalidInputException
 
 
 def validate_input_args(*args):

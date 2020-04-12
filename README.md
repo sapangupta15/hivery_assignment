@@ -52,6 +52,8 @@ These steps essentially perform the following steps:
 The endpoints are available at for documentation as well as testing:
 http://127.0.0.1:5000/swagger/
 
+Alternatively, any API request tool like curl/wget or scripts using libraries like requests can be used for testing as well
+
 There are 3 endpoints:
 1. /employees - takes company_name as query param and returns employees for a company
 2. /persons - takes 2 params, name1 and name2 and returns details for these persons as well as mutual funds who are alive and have brown eyes

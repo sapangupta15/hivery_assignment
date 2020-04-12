@@ -5,7 +5,7 @@ from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 from paranuara_challenge.dao import resource_path
 from paranuara_challenge.models.db.company import Company
 from paranuara_challenge.services.db.session_manager import session_manager
-from paranuara_challenge.exceptions.ProcessingException import ProcessingException
+from paranuara_challenge.exceptions.processing_exception import ProcessingException
 
 
 @session_manager

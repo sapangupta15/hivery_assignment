@@ -7,7 +7,7 @@ from paranuara_challenge.services.mapper.person_mapper import map_person_attribu
 from paranuara_challenge.models.db.person import Person
 from paranuara_challenge.services.db.session_manager import session_manager
 from paranuara_challenge.utils.person_utils import get_friends_by_person
-from paranuara_challenge.exceptions.ProcessingException import ProcessingException
+from paranuara_challenge.exceptions.processing_exception import ProcessingException
 
 
 @session_manager
@@ -36,7 +36,7 @@ def get_person_by_name(session, name, fetch_friends=False):
     except MultipleResultsFound:
         raise ProcessingException(f'more than 1 result exists for name: {name}')
     except NoResultFound:
-        raise ProcessingException(f'more than 1 result exists for name: {name}')
+        raise ProcessingException(f'No result exists for name: {name}')
     except Exception as e:
         raise ProcessingException(f'Error has occurred, message: {e.message}')
 

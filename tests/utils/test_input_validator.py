@@ -1,6 +1,6 @@
 import pytest
 from paranuara_challenge.utils.input_validator import validate_input_args
-from paranuara_challenge.exceptions.InputException import InvalidInputException
+from paranuara_challenge.exceptions.input_exception import InvalidInputException
 
 
 def test_validate_input_args_throws_exception_for_non_allowed_characters():

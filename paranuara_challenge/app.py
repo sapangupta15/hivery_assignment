@@ -3,15 +3,15 @@ from flask_swagger_ui import get_swaggerui_blueprint
 
 from paranuara_challenge.services.employee_service import get_employees_for_company
 from paranuara_challenge.services.people_service import get_details_for_two_people, get_details_for_single_person
-from paranuara_challenge.exceptions.InputException import InvalidInputException
-from paranuara_challenge.exceptions.ProcessingException import ProcessingException
+from paranuara_challenge.exceptions.input_exception import InvalidInputException
+from paranuara_challenge.exceptions.processing_exception import ProcessingException
 from paranuara_challenge.utils.input_validator import validate_input_args
 
 app = Flask(__name__)
 
 # add swagger details
 SWAGGER_URL = '/swagger'
-API_URL = '/static/swagger.json'
+API_URL = '/static/swagger.yml'
 SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
     SWAGGER_URL,
     API_URL,
