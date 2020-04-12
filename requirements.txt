@@ -1,5 +1,4 @@
 Flask
-dataclasses-json
 PyMySQL
 SQLAlchemy
 yoyo-migrations
