@@ -18,7 +18,7 @@ $ python -m venv venv
 $ venv\Scripts\activate
 $ pip install -r requirements.txt
 $ pytest tests\
-$ python db_migrations.py
+$ python db_migration.py
 $ python paranuara_challenge\app.py
 ```
 
@@ -33,7 +33,7 @@ $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 $ $ pytest tests/
-$ python db_migrations.py
+$ python db_migration.py
 $ python paranuara_challenge/app.py
 ```
 
