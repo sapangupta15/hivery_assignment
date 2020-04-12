@@ -4,3 +4,4 @@ PyMySQL
 SQLAlchemy
 yoyo-migrations
 flask_swagger_ui
+pytest

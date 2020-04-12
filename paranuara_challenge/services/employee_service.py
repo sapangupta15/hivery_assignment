@@ -18,6 +18,8 @@ def get_employees_for_company(session, company_name):
     """
     company_id = get_company_by_name(session, company_name=company_name)
     employees = get_persons_by_company_id(session, company_id=company_id)
+
+    # TODO move into a mapper
     employee_attrs = [Employee(
         name=employee.name,
         email=employee.email,

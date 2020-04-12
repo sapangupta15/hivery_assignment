@@ -7,7 +7,7 @@ def convert_currency_string_to_numeric(value):
     :param value:
     :return:
     """
-    return value[1:].replace(',', '')
+    return float(value[1:].replace(',', ''))
 
 
 def convert_number_to_currency_value(value):

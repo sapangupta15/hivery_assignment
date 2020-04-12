@@ -6,7 +6,6 @@ from paranuara_challenge.models.response.single_person_details import SinglePers
 from paranuara_challenge.utils.json_utils import DataClassJSONEncoder
 from paranuara_challenge.utils.person_utils import get_alive_common_friends_with_brown_eyes, \
     get_food_as_fruits_and_vegetables
-from paranuara_challenge.utils.logger import logger
 
 
 @session_manager
@@ -29,10 +28,10 @@ def get_details_for_two_people(session, name1, name2):
                                    age=person1.age,
                                    address=person1.address,
                                    phone=person1.phone),
-        second_person=PersonDetails(name=person1.name,
-                                    age=person1.age,
-                                    address=person1.address,
-                                    phone=person1.phone),
+        second_person=PersonDetails(name=person2.name,
+                                    age=person2.age,
+                                    address=person2.address,
+                                    phone=person2.phone),
         mutual_friends=alive_mutual_friends_with_brown_eyes)
     return json.dumps(person_details_with_friends, cls=DataClassJSONEncoder)
 

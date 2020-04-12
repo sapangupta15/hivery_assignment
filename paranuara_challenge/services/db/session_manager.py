@@ -2,6 +2,7 @@ import functools
 from sqlalchemy.orm.session import Session
 from paranuara_challenge.services.db import session_scope
 
+
 def session_manager(func):
     """
     Check if session has been passed by calling function,

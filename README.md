@@ -3,7 +3,7 @@
 ### Setup
 
 
-1. Run git clone <url> to clone the project on local system.
+1. Run git clone https://github.com/sapangupta15/paranuara_planet.git to clone the project on local system.
 2. Navigate to root directory of checkout path - BASE_PROJECT_DIR
 
 ---
@@ -17,6 +17,7 @@ $ SET DB_URL=mysql://<username>:<password>>@<host>:<port>/<db_name>
 $ python -m venv venv
 $ venv\Scripts\activate
 $ pip install -r requirements.txt
+$ pytest tests\
 $ python db_migrations.py
 $ python paranuara_challenge\app.py
 ```
@@ -31,6 +32,7 @@ $ export DB_URL=mysql://<username>:<password>>@<host>:<port>/<db_name>
 $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
+$ $ pytest tests/
 $ python db_migrations.py
 $ python paranuara_challenge/app.py
 ```
@@ -41,6 +43,7 @@ These steps essentially perform the following steps:
 - set PYTHONPATH env variable
 - set DB_URL env variable, which will be used by the main app, as well as db migrations script
 - create virtual environment, activate venv and install dependencies
+- Run unit tests
 - Run db migrations to create tables in database (This project yoyo-migratons. Checkout https://pypi.org/project/yoyo-migrations/4.2.0/ for more details). This also sets up the required data from json files into database.
 ##### For this to work, it is important that json files are placed at resources directory of the project.
 - Run the flask app

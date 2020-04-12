@@ -13,7 +13,7 @@ class PersonDetails:
 @dataclass
 class FriendDetails:
     name: str
-    age: str
+    age: int
     gender: str
     eye_color: str
     has_died: bool

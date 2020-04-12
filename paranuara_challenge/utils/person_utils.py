@@ -18,6 +18,16 @@ def get_friends_by_person(people_data):
     return person_friends_ids
 
 
+def get_mutual_friends(person1_friends, person2_friends):
+    """
+    apply intersection on friends on person 1 and person2
+    :param person1_friends:
+    :param person2_friends:
+    :return:
+    """
+    return list(set(person1_friends) & set(person2_friends))
+
+
 def get_alive_common_friends_with_brown_eyes(person1_friends, person2_friends):
     """
     Apply intersection on list of friends for person1 and person2
@@ -27,9 +37,9 @@ def get_alive_common_friends_with_brown_eyes(person1_friends, person2_friends):
     :return:
     """
 
-    # apply intersection on friends on person 1 and person2
-    mutual_friends = list(set(person1_friends) & set(person2_friends))
+    mutual_friends = get_mutual_friends(person1_friends, person2_friends)
 
+    # TODO move into mapper
     return [FriendDetails(
         name=friend.name,
         age=friend.age,
