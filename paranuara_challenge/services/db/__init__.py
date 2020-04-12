@@ -1,9 +1,11 @@
+import os
 from contextlib import contextmanager
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('mysql+pymysql://paranuara:Test1234@127.0.0.1:3306/paranuara_planet', pool_recycle=3600)
+db_url = os.getenv('DB_URL')
+db_url = db_url.replace('mysql://', 'mysql+pymysql://')
+engine = create_engine(db_url, pool_recycle=3600)
 SessionFactory = sessionmaker(bind=engine)
 
 
